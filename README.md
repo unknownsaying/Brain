@@ -5,7 +5,7 @@
     Imagenation
     Self Adaptive Operating System 
     WiFi-Signal on Router as Electromagnetic wave
-    TPC/IP protocol
+    TCP/IP protocol
     
 # physics
 
