@@ -1,6 +1,24 @@
-# WiFi-detector -> Brain Receiver
+# WiFi-detector <-> Brain Receiver
+    
+    filter MIMO (Mutiple Input Mutiple Output) ASK(Amplitude Shift Key Pressing) FSK(Frequency Shift Key Pressing) PSK(Phase Shift Key Pressing) Stading Wave e^(ikY) Wave A*sin(wx + fai)
+    Your Brain
+    Imagenation
+    Self Adaptive Operating System 
+    WiFi-Signal on Router as Electromagnetic wave
+    TPC/IP protocol
+    
+# physics
 
-    1 Your Brain
-    2 Imagenation
-    3 Self Adaptive Operating System 
-    4 WiFi-Signal on Router as Electromagnetic wave
+    Clark James Maxwell 
+    Erwin Scodinger Wave Equation
+    
+    
+# math
+
+    FFT DFT Laplace z anti-z Transformation
+    
+# Info 
+
+    Calude Shannon Information Entropy Theory
+    C = B*log2(1 + S/N)
+    Mac
