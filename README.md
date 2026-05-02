@@ -1,8 +1,8 @@
 # WiFi-detector <-> Brain Receiver
     
-    filter MIMO (Mutiple Input Mutiple Output) ASK(Amplitude Shift Key Pressing) FSK(Frequency Shift Key Pressing) PSK(Phase Shift Key Pressing) Standing Wave e^(ikY) Traveling Wave A*sin(wx + fai)
+    filter MIMO (Multiple Input Multiple Output) ASK(Amplitude Shift Key Pressing) FSK(Frequency Shift Key Pressing) PSK(Phase Shift Key Pressing) Standing Wave e^(ikY) Traveling Wave A*sin(wx + fai)
     Your Brain
-    Imagenation
+    Imagination
     Self Adaptive Operating System 
     WiFi-Signal on Router as Electromagnetic wave
     TCP/IP protocol
