@@ -10,8 +10,9 @@
 # physics
 
     Clark James Maxwell 
-    Erwin Scodinger Wave Equation
-    
+    Erwin Schodinger Wave Equation
+    Heisenberg
+    Richard Feynman
     
 # math
 
