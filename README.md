@@ -1,6 +1,6 @@
 # WiFi-detector <-> Brain Receiver
     
-    filter MIMO (Mutiple Input Mutiple Output) ASK(Amplitude Shift Key Pressing) FSK(Frequency Shift Key Pressing) PSK(Phase Shift Key Pressing) Stading Wave e^(ikY) Wave A*sin(wx + fai)
+    filter MIMO (Mutiple Input Mutiple Output) ASK(Amplitude Shift Key Pressing) FSK(Frequency Shift Key Pressing) PSK(Phase Shift Key Pressing) Standing Wave e^(ikY) Traveling Wave A*sin(wx + fai)
     Your Brain
     Imagenation
     Self Adaptive Operating System 
