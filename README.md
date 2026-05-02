@@ -19,6 +19,6 @@
     
 # Info 
 
-    Calude Shannon Information Entropy Theory
+    Claude Shannon Information Chaos(Entropy) Equation
     C = B*log2(1 + S/N)
     Mac
