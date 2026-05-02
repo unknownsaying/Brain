@@ -7,19 +7,19 @@
     WiFi-Signal on Router as Electromagnetic wave
     TCP/IP protocol
     
-# physics
+# physics (Left Side)
 
     Clark James Maxwell 
     Erwin Schodinger Wave Equation
     Heisenberg
     Richard Feynman
     
-# math
-
+# math (Right Side)
+ 
     FFT DFT Laplace z anti-z Transformation
     
-# Info 
+# Info (in the middle)
 
     Claude Shannon Information Chaos(Entropy) Equation
     C = B*log2(1 + S/N)
-    Mac
+    Macbook Air M1 2020.11.11
