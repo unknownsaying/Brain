@@ -195,44 +195,6 @@ class BrainReceiver:
                 else:
                     super().do_GET()
 
-            def get_html(self):
-                return """<!DOCTYPE html>
-<html><head><title>WiFi → Brain VR</title>
-<style>body{background:#000;color:#c0392b;font-family:monospace;margin:2em}
- canvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0}
- #stats{position:relative;z-index:1;background:rgba(0,0,0,0.8);padding:1em;border:1px solid #c0392b}
-</style></head><body>
-<canvas id="vr"></canvas>
-<div id="stats">
- <h1>🧠 WiFi‑Brain Receiver v0.9</h1>
- <div id="packet"></div>
- <div>Brainwave: <span id="bw">0</span> Hz</div>
- <div>Entropy: <span id="ent">0</span> bits</div>
- <div>RISC‑V a0: <span id="a0">0</span></div>
-</div>
-<script>
-setInterval(async()=>{
- let r=await fetch('/data');
- let d=await r.json();
- document.getElementById('packet').textContent=d.last_packet;
- document.getElementById('bw').textContent=d.brainwave.toFixed(2);
- document.getElementById('ent').textContent=d.entropy.toFixed(2);
- document.getElementById('a0').textContent=d.riscv_registers?.a0||0;
- // Draw VR hologram
- let c=document.getElementById('vr');
- let ctx=c.getContext('2d');
- c.width=window.innerWidth;
- c.height=window.innerHeight;
- ctx.fillStyle='rgba(0,0,0,0.1)';
- ctx.fillRect(0,0,c.width,c.height);
- for(let i=0;i<100;i++){
-  let x=Math.sin(d.brainwave*i*0.01+Date.now()*0.001)*50+c.width/2;
-  let y=Math.cos(d.oscillator*0.001+i*0.1+Date.now()*0.002)*50+c.height/2;
-  ctx.fillStyle=`hsl(${d.entropy*60},100%,50%)`;
-  ctx.beginPath();ctx.arc(x,y,2,0,Math.PI*2);ctx.fill();
- }
-},100);
-</script></body></html>"""
 
         brain_receiver = self  # capture for handler
         server = HTTPServer(('0.0.0.0', port), VRHandler)
