@@ -82,8 +82,8 @@ class BrainWiFiConnector:
 
     def channel(self, symbols):
         """
-        Apply MIMO channel, travelling/standing waves, noise.
-        Travelling wave: A*sin(wx + phi) modelled as time-varying phase shift.
+        Apply MIMO channel, traveling/standing waves, noise.
+        Traveling wave: A*sin(wx + phi) modelled as time-varying phase shift.
         Standing wave: e^(ikY) adds spatial interference pattern.
         """
         # Spread symbols across multiple transmitters (simple spatial multiplexing)
