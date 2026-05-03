@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 # ------------------------- Physics & Math constants -------------------------
 # Clark James Maxwell: speed of light
-c = 299792458
+c = 3e8
 # Erwin Schrödinger / Heisenberg / Feynman: used in quantum noise model (not full QM, just conceptual)
 h_bar = 1.054571817e-34
 
@@ -82,8 +82,8 @@ class BrainWiFiConnector:
 
     def channel(self, symbols):
         """
-        Apply MIMO channel, traveling/standing waves, noise.
-        Traveling wave: A*sin(wx + phi) modelled as time-varying phase shift.
+        Apply MIMO channel, travelling/standing waves, noise.
+        Travelling wave: A*sin(wx + phi) modelled as time-varying phase shift.
         Standing wave: e^(ikY) adds spatial interference pattern.
         """
         # Spread symbols across multiple transmitters (simple spatial multiplexing)
@@ -175,6 +175,7 @@ class BrainWiFiConnector:
 
 # ------------------------- Flask Web Interface -------------------------
 connector = BrainWiFiConnector(num_tx=2, num_rx=3, bandwidth=1e6, carrier_freq=2.4e9, snr_db=15)
+
 
 @app.route('/')
 def index():

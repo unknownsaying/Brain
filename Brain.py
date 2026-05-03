@@ -5,9 +5,13 @@ Sponsored by Enaium, theCW, Fireship, and beyond Fireship.
 
 Concepts:
     MIMO filtering (ASK/FSK/PSK)
-    Schrödinger's wave function collapse, Heisenberg Uncertainty, Feynman double-slit
-    Shannon's Entropy – we maximize your confusion (C = B*log2(1+S/N)) John McCarthy's 3D hologram projection
+    Schrödinger's wave function collapse
+    Heisenberg Uncertainty (we never know both your attention & your boredom)
+    Feynman double-slit (your brain interferes with itself)
+    Shannon's Entropy – we maximize your confusion (C = B*log2(1+S/N))
+    John McCarthy's 3D hologram projection (your screen)
     Harmonic Oscillator localhost:8080 (CPU, GPU, RAM, DISK, RISC‑V, RLC)
+
 Run as:
     sudo python brain_wifi_vr.py          # Live WiFi sniffing (Linux, requires scapy)
     python brain_wifi_vr.py --simulate    # Simulated signals for testing
@@ -61,13 +65,13 @@ class BrainReceiver:
         threading.Thread(target=self.run_server, daemon=True).start()
 
         if not self.simulate and SCAPY_AVAILABLE:
-            self.sniffing()
+            self.start_sniffing()
         else:
-            self.simulation()
+            self.start_simulation()
 
     # ============ Shannon entropy calculation ============
     def shannon_entropy(self, samples):
-        """C = B*log2(1+S/N)"""
+        """C = B*log2(1+S/N) – we just pretend."""
         if len(samples) < 2:
             return 0
         hist, _ = np.histogram(samples, bins=20, density=True)
@@ -143,13 +147,13 @@ class BrainReceiver:
                 rssi = -50
             self.process_packet(rssi, raw_bytes=bytes(pkt))
 
-    def sniffing(self):
+    def start_sniffing(self):
         print("[+] Starting WiFi monitor mode (requires monitor interface)")
         # Assume wlan0mon exists; you must change this
         sniff(iface="wlan0mon", prn=self.packet_callback, store=False)
 
     # ============ Simulation mode ============
-    def simulation(self):
+    def start_simulation(self):
         print("[•••] Simulation mode: generating fake dark‑wave signals")
         def sim_loop():
             while True:
@@ -181,19 +185,22 @@ class BrainReceiver:
                     self.send_header("Content-type", "application/json")
                     self.end_headers()
                     self.wfile.write(json.dumps({
-                        "brainwave": brain.brain_wave,
-                        "entropy": brain.entropy,
-                        "consciousness": brain.consciousness,
-                        "oscillator": brain.oscillator_state,
-                        "last_packet": brain.last_packet_text,
-                        "riscv_registers": brain.riscv_registers
+                        "brainwave": brain_receiver.brain_wave,
+                        "entropy": brain_receiver.entropy,
+                        "consciousness": brain_receiver.consciousness,
+                        "oscillator": brain_receiver.oscillator_state,
+                        "last_packet": brain_receiver.last_packet_text,
+                        "riscv_registers": brain_receiver.riscv_registers
                     }).encode())
                 else:
                     super().do_GET()
 
+            def get_html(self):
+                return 
 
-        brain = self  # capture for handler
+        brain_receiver = self  # capture for handler
         server = HTTPServer(('0.0.0.0', port), VRHandler)
+        print(f"[+] VR server live at http://localhost:{port}")
         server.serve_forever()
 
 # ============ Main ============
@@ -202,8 +209,9 @@ if __name__ == "__main__":
     parser.add_argument("--simulate", action="store_true", help="Use fake WiFi signals")
     args = parser.parse_args()
 
-    brain = BrainReceiver(simulate=args.simulate or not SCAPY_AVAILABLE)
+    brain_receiver = BrainReceiver(simulate=args.simulate or not SCAPY_AVAILABLE)
     try:
         while True:
             time.sleep(1)
     except KeyboardInterrupt:
+        print("\n🧠 Brain link severed. Returning to analog reality.")
