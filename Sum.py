@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 # ------------------------- Physics & Math constants -------------------------
 # Clark James Maxwell: speed of light
-c = 3e8
+c = 299792458
 # Erwin Schrödinger / Heisenberg / Feynman: used in quantum noise model (not full QM, just conceptual)
 h_bar = 1.054571817e-34
 
